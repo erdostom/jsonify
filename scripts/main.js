@@ -1,0 +1,1 @@
+"use strict";console.log("'Allo 'Allo!");var convert=function(){var t=$("#indata").val(),n=[];_(t.split("\n")).each(function(t){n.push(t.split("	"))});var o=_(n).first(),c=_(n).rest(),i=[];_(c).map(function(t){var n={};_(o).each(function(o,c){n[o]=t[c]}),i.push(n)}),$("#output").text(JSON.stringify(i))};$(function(){$("button").click(function(){convert()})});
