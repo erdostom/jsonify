@@ -1,6 +1,4 @@
 'use strict';
-console.log('\'Allo \'Allo!');
-
 var convert = function() {
     var input = $('#indata').val();
     var nry = [];
