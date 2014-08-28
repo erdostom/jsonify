@@ -5,6 +5,7 @@ var gulp = require('gulp');
 
 // load plugins
 var $ = require('gulp-load-plugins')();
+var deploy = require("gulp-gh-pages");
 
 gulp.task('styles', function () {
     return gulp.src('app/styles/main.scss')
@@ -131,4 +132,10 @@ gulp.task('watch', ['connect', 'serve'], function () {
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/images/**/*', ['images']);
     gulp.watch('bower.json', ['wiredep']);
+});
+
+gulp.task('deploy', function() {
+    gulp.src("./dist/**/*")
+        .pipe(deploy())
+        .pipe(gulp.dest('.tmp'));
 });
